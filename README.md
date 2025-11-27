@@ -1,5 +1,9 @@
 # docker-secrets
-Script for setting up docker secrets
+Script for setting up docker secrets.
+
+https://docs.docker.com/compose/how-tos/use-secrets/
+
+
 
 Deploy:
 
@@ -11,7 +15,7 @@ git clone https://github.com/ALFinternet/docker-secrets.git ~/appdata/docker_fil
 
 2. Create some secrets
 ```bash
-docker secrets...
+nano.....
 ```
 
 3. Deploy
