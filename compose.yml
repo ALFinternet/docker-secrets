@@ -14,8 +14,8 @@ services:
     volumes:
       - ${LOCVOL1}nginx:/config
     secrets:
-      - secretvariable1
-      - secretvariable2
+      - secretvar1
+      - secretvar2
     ports:
       - 8081:80
 #      - 443:443
