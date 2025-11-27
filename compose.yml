@@ -1,0 +1,26 @@
+---
+services:
+  nginx:
+    image: lscr.io/linuxserver/nginx:latest
+    container_name: secrets-nginx
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - NGINX_AUTORELOAD= #optional
+      - NGINX_AUTORELOAD_WATCHLIST= #optional
+      - FILE__SECRETVAR1=/run/secrets/secretvariable1
+      - FILE__SECRETVAR2=/run/secrets/secretvariable2
+    volumes:
+      - ${LOCVOL1}nginx:/config
+    ports:
+      - 8081:80
+#      - 443:443
+    restart: unless-stopped
+
+networks:
+  default:
+    external: true
+    name: ${CONNET}
+
+# END
