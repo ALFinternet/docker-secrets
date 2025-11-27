@@ -9,14 +9,23 @@ services:
       - TZ=${TZ}
       - NGINX_AUTORELOAD= #optional
       - NGINX_AUTORELOAD_WATCHLIST= #optional
-      - FILE__SECRETVAR1=/run/secrets/secretvariable1
-      - FILE__SECRETVAR2=/run/secrets/secretvariable2
+      #- FILE__SECRETVAR1=/run/secrets/secretvariable1
+      #- FILE__SECRETVAR2=/run/secrets/secretvariable2
     volumes:
       - ${LOCVOL1}nginx:/config
+    secrets:
+      - secretvariable1
+      - secretvariable2
     ports:
       - 8081:80
 #      - 443:443
     restart: unless-stopped
+
+secrets:
+  secretvar1:
+    file: secretvar1.txt
+  secretvar2:
+    file: secretvar2.txt
 
 networks:
   default:
