@@ -16,5 +16,5 @@ docker secrets...
 
 3. Deploy
 ```bash
-docker compose -p docker-secrets -f ~/appdata/docker_files/docker-secrets/compose.yaml --env-file ~/appdata/docker_files/docker-secrets/.env up -d
+docker compose -p docker-secrets -f ~/appdata/docker_files/docker-secrets/compose.yml --env-file ~/appdata/docker_files/docker-secrets/.env up -d
 ```
